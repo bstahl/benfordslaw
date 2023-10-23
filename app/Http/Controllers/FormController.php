@@ -46,7 +46,7 @@ class FormController extends Controller
         $digitCount = array_fill(1, 9, 0); 
 
         foreach ($input as $number) {
-            $firstDigit = (int) substr((string) abs($number), 0, 1); // Extract the first digit.
+            $firstDigit = (int) substr((string) abs($number), 0, 1); 
             $digitCount[$firstDigit]++;
         }
 
@@ -72,8 +72,9 @@ class FormController extends Controller
 
 		foreach($actualCount as $key => $c) {
 		
-			// Subtract the expected count from the actual count and take the absolute value of that and compare it to the precent variance
-			// to see if it's within the acceptable range.
+			// Subtract the expected count from the actual count and take the absolute 
+			// value of that and compare it to the precent variance to see if it's 
+			// within the acceptable range.
 			$percentDifference = abs($c - $expectedCount[$key]);
 			if($percentDifference > $percentVariance) {
 				$doesConform = false;
